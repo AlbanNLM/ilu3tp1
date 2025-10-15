@@ -1,6 +1,7 @@
 package jeu;
 
 import cartes.Carte;
+
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.ConcurrentModificationException;
@@ -11,8 +12,7 @@ public class Sabot implements Iterable<Carte> {
     private int modCount;
     
     public Sabot(Carte[] cartesJeu) {
-        this.cartes = new Carte[cartesJeu.length];
-        System.arraycopy(cartesJeu, 0, this.cartes, 0, cartesJeu.length);
+        this.cartes = cartesJeu;
         this.nbCartes = cartesJeu.length;
         this.modCount = 0;
     }
