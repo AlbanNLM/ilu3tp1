@@ -1,4 +1,4 @@
-package ilu3tp1;
+package cartes;
 
 public abstract class Carte {
 

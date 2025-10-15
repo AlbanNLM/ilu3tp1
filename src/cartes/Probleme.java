@@ -1,10 +1,10 @@
-package ilu3tp1;
+package cartes;
 
 public abstract class Probleme extends Carte {
 	Type type;
 	
-	protected Probleme(Type typePb) {
-		type = typePb;
+	protected Probleme(Type type) {
+		this.type = type;
 	}
 	
 	public Type getType() {

@@ -1,4 +1,4 @@
-package ilu3tp1;
+package cartes;
 
 public class Borne extends Carte {
 	int km;
@@ -6,5 +6,9 @@ public class Borne extends Carte {
 	public Borne(int kmh) {
 		km = kmh;
 	}
-
+	
+	@Override
+	public String toString() {
+		return km + " km";
+	}
 }
