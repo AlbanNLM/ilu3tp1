@@ -5,53 +5,57 @@ import java.util.Iterator;
 import cartes.Botte;
 import cartes.Carte;
 import cartes.JeuDeCartes;
-import cartes.Type;
 import jeu.Sabot;
 
 public class TestSabot {
-    public static void main(String[] args) {
-        JeuDeCartes jeu = new JeuDeCartes();
-        Carte[] cartes = jeu.donnerCartes();
-        Sabot sabot1 = new Sabot(cartes);
-        while (!sabot1.estVide()) {
-            Carte carte = sabot1.piocher();
-            System.out.println("je pioche " + carte);
-        }
-        
-        Sabot sabot2 = new Sabot(jeu.donnerCartes());
-        Iterator<Carte> it = sabot2.iterator();
-        while (it.hasNext()) {
-            Carte carte = it.next();
-            System.out.println("je pioche " + carte);
-            it.remove();
-        }
-        
-        try {
-            Sabot sabot3 = new Sabot(jeu.donnerCartes());
-            Iterator<Carte> it3 = sabot3.iterator();
-            while (it3.hasNext()) {
-                Carte carte = it3.next();
-                System.out.println("je pioche " + carte);
-                sabot3.piocher();
-                it3.remove();
-            }
-        } catch (Exception e) {
-            System.out.println("Exception attrapee");
-        }
-        
-        try {
-            Sabot sabot4 = new Sabot(jeu.donnerCartes());
-            sabot4.piocher();
-            
-            Iterator<Carte> it4 = sabot4.iterator();
-            while (it4.hasNext()) {
-                Carte carte = it4.next();
-                System.out.println("je pioche " + carte);
-                sabot4.ajouterCarte(new Botte(Type.FEU));
-                it4.remove();
-            }
-        } catch (Exception e) {
-            System.out.println("Exception attrapee");
-        }
-    }
+	JeuDeCartes jeu = new JeuDeCartes();
+	Sabot sabot = new Sabot(jeu.donnerCartes());
+
+	// 4.2.a
+	public void questionA() {
+
+//		while (!sabot.estVide()) {
+//			Carte carte = sabot.piocher();
+//			System.out.println("Je pioche " + carte);
+//		}
+//		Console :
+//		Je pioche Accident
+//		Je pioche Accident
+//		Je pioche Accident
+//		Je pioche R�paration
+//		Je pioche R�paration
+//		Je pioche R�paration
+//		Je pioche As du volant
+	}
+
+	// 4.2.b
+	public void questionB() {
+//		for (Iterator<Carte> iterator = sabot.iterator(); iterator.hasNext();) {
+//			System.out.println("Je pioche " + iterator.next());
+//			iterator.remove();
+//		}
+	}
+
+	// 4.2.c
+	public void questionC() {
+//		Carte cartePiochee = sabot.piocher();
+//		System.out.println("Je pioche " + cartePiochee);
+//		for (Iterator<Carte> iterator = sabot.iterator(); iterator.hasNext();) {
+//			Carte carte = iterator.next();
+//			System.out.println("Je pioche " + carte);
+//			iterator.remove();
+//			Carte cartePiochee = sabot.piocher();
+//			sabot.ajouterCarte(new Botte(cartes.Type.ACCIDENT));
+//		}
+//		Iterator<Carte> iterator = sabot.iterator();
+//		System.out.println("\nLa pioche contient encore des cartes ? " + iterator.hasNext());
+	}
+
+	public static void main(String[] args) {
+		TestSabot testPioche = new TestSabot();
+//		testPioche.questionA();
+//		testPioche.questionB();
+//		testPioche.questionC();
+	}
+
 }

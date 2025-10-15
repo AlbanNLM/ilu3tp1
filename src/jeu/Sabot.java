@@ -23,7 +23,7 @@ public class Sabot implements Iterable<Carte> {
     
     public void ajouterCarte(Carte carte) {
         if (nbCartes >= cartes.length) {
-            throw new ArrayIndexOutOfBoundsException("Depassement de capacite");
+            throw new ArrayIndexOutOfBoundsException("depassement de capacite");
         }
         cartes[nbCartes++] = carte;
         modCount++;
@@ -31,7 +31,7 @@ public class Sabot implements Iterable<Carte> {
     
     public Carte piocher() {
         if (estVide()) {
-            throw new NoSuchElementException("Le sabot est vide");
+            throw new NoSuchElementException("le sabot est vide");
         }
         
         Iterator<Carte> it = iterator();
@@ -59,7 +59,7 @@ public class Sabot implements Iterable<Carte> {
         public Carte next() {
             verifierConcurrence();
             if (!hasNext()) {
-                throw new NoSuchElementException("Limite des cartes atteinte");
+                throw new NoSuchElementException("limite des cartes atteinte");
             }
             nextEffectue = true;
             return cartes[indiceIterateur++];

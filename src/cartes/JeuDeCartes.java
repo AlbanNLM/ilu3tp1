@@ -37,10 +37,20 @@ public class JeuDeCartes {
         configurations[index++] = new Configuration(new DebutLimite(), 4);
     }
     
-    public void affichageJeuDeCartes() {
+    public String affichageJeuCartes() {
+        String resultat = "";
         for (Configuration config : configurations) {
-            System.out.println(config.getNbExemplaires() + " " + config.getCarte());
+            resultat = resultat + config.getNbExemplaires() + " " + config.getCarte() + "\n";
         }
+        return resultat;
+    }
+    
+    public boolean checkCount() {
+        int total = 0;
+        for (Configuration config : configurations) {
+            total += config.getNbExemplaires();
+        }
+        return total == 106;
     }
     
     public Carte[] donnerCartes() {
