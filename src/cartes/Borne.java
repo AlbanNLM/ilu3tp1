@@ -1,7 +1,7 @@
 package cartes;
 
 public class Borne extends Carte {
-	int km;
+	private int km;
 	
 	public Borne(int kmh) {
 		km = kmh;
@@ -10,5 +10,5 @@ public class Borne extends Carte {
 	@Override
 	public String toString() {
 		return km + " km";
-	}
+	}	
 }
